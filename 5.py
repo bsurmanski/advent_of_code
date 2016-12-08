@@ -14,12 +14,10 @@ def main():
     i = 0
     while len(door_id) < 8:
         key_attempt = input + str(i)
-        while not key_is_special(key_attempt):
-            i += 1
-            key_attempt = input + str(i)
-        door_id += key_character(key_attempt)
         i += 1
-        print door_id
+        if key_is_special(key_attempt):
+            door_id += key_character(key_attempt)
+    print door_id
 
 if __name__ == "__main__":
     main()
